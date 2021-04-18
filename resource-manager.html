@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-social/bootstrap-social.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <title>Resource Manager</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#Navbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mr-auto" href="#"><img src="img/logo.png" height="30" width="41"
+          /></a>
+        <div class="collapse navbar-collapse" id="Navbar">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#"
+                ><span class="fa fa-home fa-lg"></span> Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><span class="fa fa-info fa-lg"></span> About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><span class="fa fa-list fa-lg"></span> Tools</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><span class="fa fa-address-card fa-lg"></span> Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contact Modal Form -->
+    <div id="contactModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" role="content">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header alert-success">
+            <h4 class="modal-title">Add Contact</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form id="contact-form" action="">
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label"
+                  >Full Name</label
+                >
+                <div class="col-12 col-sm-4">
+                  <input type="text" class="form-control" id="inputFirstName" placeholder="First Name"/>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <input type="text" class="form-control" id="inputLastName" placeholder="Last Name"/>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputDOB">DOB</label>
+                <div class="col-12 col-sm-8">
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="inputDOB"
+                    name="inputDOB"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputEmail">Email</label>
+                <div class="col-12 col-sm-8">
+                  <input type="email" class="form-control" id="inputEmail" placeholder="abc@gmail.com"/>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputType">Type</label>
+                  <div class="col-12 col-sm-8">
+                    <select type="" class="form-control" id="inputType" data-show-content="true">
+                      <option value="selected disabled">Select a type of contact</option>
+                      <option>Buyer</option>
+                      <option>Retail Customer</option>
+                      <option>Wholesale Customer</option>
+                      <option>Supplier</option>
+                      <option>Employee</option>
+                      <option>Random Contact</option>
+                  </select>
+                  </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputTelephone">Telephone</label>
+                <div class="col-12 col-sm-8">
+                  <input type="tel" class="form-control" id="inputTelephone" placeholder="(044)12345678"/>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputMobile">Mobile</label>
+                <div class="col-12 col-sm-8">
+                  <input type="tel" class="form-control" id="inputMobile" placeholder="+91 0123456789"/>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputCompany">Company</label>
+                <div class="col-12 col-sm-8">
+                  <input type="text" class="form-control" id="inputCompany" placeholder="Company Name"/>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputAddress">Street Name</label>
+                <div class="col-12 col-sm-8">
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Delivery Address"/>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label"
+                  >City</label
+                >
+                <div class="col-12 col-sm-4">
+                  <select type="" class="form-control" id="inputCity" data-show-content="true">
+                    <option value="selected disabled">City Name</option>
+                    <option>Bengaluru</option>
+                    <option>Chennai</option>
+                    <option>Hyderabad</option>
+                    <option>Kolkata</option> 
+                    <option>Mumbai</option>
+                    <option>New Delhi</option>
+                  </select>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <input type="text" class="form-control" id="inputPostalCode" placeholder="600 020"/>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputState">State</label>
+                <div class="col-12 col-sm-8">
+                  <select type="" class="form-control" id="inputState" data-show-content="true">
+                    <option value="selected disabled">State Name</option>
+                    <option>Karnataka</option>
+                    <option>Tamil Nadu</option>
+                    <option>Telangana</option>
+                    <option>West Bengal</option> 
+                    <option>Maharashtra</option>
+                    <option>Andhra Pradesh</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputNotes">Notes</label>
+                <div class="col-12 col-sm-8">
+                  <textarea class="form-control" id="inputNotes" placeholder="Description, related links, ...."></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col offset-0 offset-sm-2">
+                  <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">
+                    Cancel
+                  </button>
+                  <button type="submit" class="btn btn-primary btn-sm ml-auto">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Equipment Modal Form -->
+    <div id="equipmentModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" role="content">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header alert-success">
+            <h4 class="modal-title">Add Equipment</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form id="equipment-form" action="">
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label"
+                  >Equipment</label
+                >
+                <div class="col-12 col-sm-4">
+                  <input type="text" class="form-control" id="inputName" placeholder="Name"/>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <input type="text" class="form-control" id="inputModel" placeholder="Model"/>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputType">Type</label>
+                <div class="col-12 col-sm-8">
+                  <select type="" class="form-control" id="inputType" data-show-content="true">
+                    <option value="selected disabled">Select from the options</option>
+                    <option>Tractor</option>
+                    <option>Truck</option>
+                    <option>Wagon</option>
+                    <option>Irrigation</option>
+                    <option>Tools</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label">Ownership</label>
+                <div class="col-12 col-sm-4">
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-success btn-sm" active>
+                      <input type="radio" name="inputOwnership" id="inputPurchased" autocomplete="off" checked> Purchased
+                    </label>
+                    <label class="btn btn-danger btn-sm">
+                      <input type="radio" name="inputOwnership" id="inputLeased" autocomplete="off"> Leased
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputAquisitionDate">Aquisition Date</label>
+                <div class="col-12 col-sm-8">
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="inputAquisitionDate"
+                    name="inputAquisitionDate"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputCost">Cost</label>
+                <div class="col-12 col-sm-8">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fa fa-inr"></i>
+                    </div>
+                    <input type="text" class="form-control" id="inputCost" placeholder="0.00">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputNotes">Notes</label>
+                <div class="col-12 col-sm-8">
+                  <textarea class="form-control" id="inputNotes" placeholder="Description, related links, ...."></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col offset-0 offset-sm-2">
+                  <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">
+                    Cancel
+                  </button>
+                  <button type="submit" class="btn btn-primary btn-sm ml-auto">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transaction Modal Form -->
+    <div id="transactionModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" role="content">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header alert-success">
+            <h4 class="modal-title">Add Transaction</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form id="transaction-form" action="">
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label">Type</label>
+                <div class="col-12 col-sm-4">
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-success btn-sm" active>
+                      <input type="radio" name="inputType" id="inputIncome" autocomplete="off" checked> Income
+                    </label>
+                    <label class="btn btn-danger btn-sm">
+                      <input type="radio" name="inputType" id="inputExpense" autocomplete="off"> Expense
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputAmount">Amount</label>
+                <div class="col-12 col-sm-8">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fa fa-inr"></i>
+                    </div>
+                    <input type="text" class="form-control" id="inputAmount" placeholder="0.00">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputTransDate">Transaction Date</label>
+                <div class="col-12 col-sm-8">
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="inputTransDate"
+                    name="inputTransDate"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputName">Contact Name</label>
+                <div class="col-12 col-sm-8">
+                  <input type="text" class="form-control" id="inputName" placeholder="Name"/>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputType">Type</label>
+                <div class="col-12 col-sm-8">
+                  <select type="" class="form-control" id="inputType" data-show-content="true">
+                    <option value="selected disabled">Select from the options</option>
+                    <option class="alert-success" value="option1">Produce Sales</option>
+                    <option class="alert-success" value="option1">Livestock Sales</option>
+                    <option class="alert-success" value="option1">Cooperative Distributions</option>
+                    <option class="alert-success"  value="option1">Government Agricultural Program</option>
+                    <option class="alert-danger" value="option1">Material or Equipment Resale</option>
+                    <option class="alert-danger" value="option2">Truck or Tractor Expense</option>
+                    <option class="alert-danger" value="option2">Fertilizers</option>
+                    <option class="alert-danger" value="option2">Livestock Purchase</option>
+                    <option class="alert-danger" value="option2">Irrigation System</option>
+                    <option class="alert-danger" value="option2">Tools Purchase</option>
+                    <option class="alert-danger" value="option2">Maintenance</option>
+                    <option class="alert-danger" value="option2">Employee</option>
+                    <option class="alert-primary" value="option2">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputNotes">Notes</label>
+                <div class="col-12 col-sm-8">
+                  <textarea class="form-control" id="inputNotes" placeholder="Description, related links, ...."></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col offset-0 offset-sm-2">
+                  <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">
+                    Cancel
+                  </button>
+                  <button type="submit" class="btn btn-primary btn-sm ml-auto">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header class="jumbotron">
+      <div class="container">
+        <div class="row row-header">
+          <div class="col-12 col-sm-6">
+            <h1>Resource Manager</h1>
+            <p>
+              Helps you keep track of all your resources efficiently!
+            </p>
+          </div>
+          <div class="col-12 col-sm-3 text-center align-self-center" align-self-center>
+            <img src="img/logo.png" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row row-header">
+        <div class="card col-12 col-sm-4">
+          <div class="card-header bg-warning">
+            <h5 class="card-title">Contact</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              To add a new contact or lead, click this button
+            </p>
+            <div class="col-12 col-sm-10 text-center align-self-center">
+              <a data-toggle="modal" data-target="#contactModal" role="button" type="button"
+              class="btn btn-sm btn-info btn-block">ADD</a>
+            </div>
+          </div>
+        </div>
+        <div class="card col-12 col-sm-4">
+          <div class="card-header bg-warning">
+            <h5 class="card-title">Equipment</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              To add a new equipment, click this button
+            </p>
+            <div class="col-12 col-sm-10 text-center align-self-center">
+              <a data-toggle="modal" data-target="#equipmentModal" role="button" type="button"
+              class="btn btn-sm btn-info btn-block">ADD</a>
+            </div>
+          </div>
+        </div>
+        <div class="card col-12 col-sm-4">
+          <div class="card-header bg-warning">
+            <h5 class="card-title">Transaction</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              To add a new transaction, click this button
+            </p>
+            <div class="col-12 col-sm-10 text-center align-self-center">
+              <a data-toggle="modal" data-target="#transactionModal" role="button" type="button"
+              class="btn btn-sm btn-info btn-block">ADD</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 offset-1 col-sm-2">
+            <h5>Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Tools</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-7 col-sm-5">
+          </div>
+          <div class="col-12 col-sm-4 align-self-center">
+            <div class="text-center">
+              <a
+                class="btn btn-social-icon btn-google"
+                href="http://google.com/+"
+                ><i class="fa fa-google-plus fa-lg"></i
+              ></a>
+              <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="
+                ><i class="fa fa-facebook fa-lg"></i
+              ></a>
+              <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"
+                ><i class="fa fa-linkedin fa-lg"></i
+              ></a>
+              <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"
+                ><i class="fa fa-twitter fa-lg"></i
+              ></a>
+              <a class="btn btn-social-icon btn-google href="http://youtube.com/"
+                ><i class="fa fa-youtube fa-lg"></i
+              ></a>
+              <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope fa-lg"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-auto">
+            <p>© Copyright 2021 Leafage</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- For tooltips, popovers and modals -->
+    <!-- <script>
+      $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script> -->
+  </body>
+</html>
