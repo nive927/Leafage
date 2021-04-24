@@ -37,7 +37,7 @@ div.main-container {
   box-shadow: 0px 1px 1px 0 #ccc;
 }
 .btn-add {
-  background: #dc3545;
+  background: goldenrod;
   padding: 8px 12px;
   font-size: 18px;
   color: #fff;
@@ -98,14 +98,14 @@ form textarea {
   padding: 8px 12px;
   margin-top: 10px;
   border-radius: 5px;
-  background: #ffc107;
+  background: purple;
   color: #fff;
   outline: none;
   border: none;
   cursor: pointer;
 }
 .btn-submit button:hover {
-  background: yellow;
+  background: violet;
 }
 .questions {
   overflow-y: scroll;
@@ -173,7 +173,7 @@ p.que-text {
 .response-form .btn-submit button {
   font-size: 14px;
   margin-top: 10px;
-  background: #ffc107;
+  background: purple;
   padding: 8px 12px;
 }
 .yellow {
@@ -183,20 +183,20 @@ p.que-text {
   padding: 0 3px;
 }
 .fa {
-  color: #000;
+  color: black;
 }
 .fa:hover,
 .fa:active {
-  color: #e83e8c;
+  color: goldenrod;
 }
 i.active {
-  color: #e83e8c;
+  color: goldenrod;
 }
 .que-item .que-title,
 .que-item .que-text {
   padding-right: 30px;
 }
-.que-item .fav {
+.que-item .star {
   float: right;
   position: relative;
   bottom: 34px;

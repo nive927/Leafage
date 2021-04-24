@@ -15,7 +15,7 @@ var questions = {
 			}
 		],
 		resolved: false,
-		favorite: false
+		starred: false
 	},
 	"2" : {
 		id: 2,
@@ -33,7 +33,7 @@ var questions = {
 			}
 		],
 		resolved: false,
-		favorite: true
+		starred: true
 	},
 	"3" : {
 		id: 3,
@@ -51,7 +51,7 @@ var questions = {
 			}
 		],
 		resolved: false,
-		favorite: false
+		starred: false
 	}
 };
 
@@ -72,8 +72,8 @@ var resolveBtn = document.getElementById("resolve");
 var search = document.getElementById("search");
 var upvote = document.getElementById("upvote");
 var downvote = document.getElementById("downvote");
-var favorite = document.getElementById("favorite");
-var showFavBtn = document.getElementById("show-favorites");
+var starred = document.getElementById("starred");
+var showstarBtn = document.getElementById("show-Starred");
 
 var activeQuestion;
 
@@ -101,7 +101,7 @@ function loadQuestions(){
 		return b.votes-a.votes;
 	});
 	data.forEach((que)=>{
-		questionView.innerHTML += `<div class="que-item" id="${que.id}"><h2 class="que-title">${que.title}</h2><p class="que-text">${que.text}</p>${(que.favorite)?"<i class='fa fa-heart active fav'></i>":"<i></i>"}</div>`;
+		questionView.innerHTML += `<div class="que-item" id="${que.id}"><h2 class="que-title">${que.title}</h2><p class="que-text">${que.text}</p>${(que.starred)?"<i class='fa fa-star active star'></i>":"<i></i>"}</div>`;
 	})
 	console.log(data);
 	setupQuestions();
@@ -124,7 +124,7 @@ function addQuestion(event){
 		resolved: false
 	};
 	questions[id] = newQue;
-	questionView.innerHTML += `<div class="que-item" id="${newQue.id}"><h2 class="que-title">${newQue.title}</h2><p class="que-text">${newQue.text}</p>${(que.favorite)?"<i class='fa fa-heart active fav'></i>":"<i></i>"}</div>`;
+	questionView.innerHTML += `<div class="que-item" id="${newQue.id}"><h2 class="que-title">${newQue.title}</h2><p class="que-text">${newQue.text}</p>${(que.starred)?"<i class='fa fa-star active star'></i>":"<i></i>"}</div>`;
 	setupQuestions();
 }
 
@@ -193,7 +193,7 @@ function searchQuery(){
 			let text = que.text;
 			title = title.replace(new RegExp(query, 'gi'), '<span class="yellow">' + query + '</span>');
 			text = text.replace(new RegExp(query, 'gi'), '<span class="yellow">' + query + '</span>');
-			questionView.innerHTML += `<div class="que-item" id="${que.id}"><h2 class="que-title">${title}</h2><p class="que-text">${text}</p>${(que.favorite)?"<i class='fa fa-heart active fav'></i>":"<i></i>"}</div>`;
+			questionView.innerHTML += `<div class="que-item" id="${que.id}"><h2 class="que-title">${title}</h2><p class="que-text">${text}</p>${(que.starred)?"<i class='fa fa-star active star'></i>":"<i></i>"}</div>`;
 		});
 		setupQuestions();	
 	}
@@ -203,7 +203,7 @@ function showDescription(){
 	welcome.style.display="none";
 	description.style.display="block";
 	loadActiveQuestion();
-	setFavorite();
+	setstarred();
 }
 
 function showWelcome(){
@@ -224,26 +224,26 @@ function downVote(){
 	document.getElementById("votes").innerText = activeQuestion.votes;
 }
 
-function setFavorite(){
-	if(activeQuestion.favorite)
-		favorite.classList.add("active");
+function setstarred(){
+	if(activeQuestion.starred)
+		starred.classList.add("active");
 	else
-		favorite.classList.remove("active");
+		starred.classList.remove("active");
 }
 
-function addFavorite(){
-	activeQuestion.favorite = !activeQuestion.favorite;
-	if(activeQuestion.favorite)
-		favorite.classList.add("active");
+function addstarred(){
+	activeQuestion.starred = !activeQuestion.starred;
+	if(activeQuestion.starred)
+		starred.classList.add("active");
 	else
-		favorite.classList.remove("active");
+		starred.classList.remove("active");
 	loadQuestions();
 }
 
-function showFavorite(){
+function showstarred(){
 	if(this.innerText == "View All"){
 		loadQuestions();
-		this.innerText = "Favorites";
+		this.innerText = "Starred"
 		return;
 	}
 	//else
@@ -252,7 +252,7 @@ function showFavorite(){
 	questionView.innerText = "";
 	for(let queNo in questions){
 		let question = questions[queNo];
-		if(question.favorite)
+		if(question.starred)
 			data.push(question);
 		// questionView.innerHTML += `<div class="que-item" id="${queNo}"><h2 class="que-title">${question.title}</h2><p class="que-text">${question.text}</p></div>`;
 	}
@@ -260,7 +260,7 @@ function showFavorite(){
 		return b.votes-a.votes;
 	});
 	data.forEach((que)=>{
-		questionView.innerHTML += `<div class="que-item" id="${que.id}"><h2 class="que-title">${que.title}</h2><p class="que-text">${que.text}</p>${(que.favorite)?"<i class='fa fa-heart active fav'></i>":"<i></i>"}</div>`;		
+		questionView.innerHTML += `<div class="que-item" id="${que.id}"><h2 class="que-title">${que.title}</h2><p class="que-text">${que.text}</p>${(que.starred)?"<i class='fa fa-star active star'></i>":"<i></i>"}</div>`;		
 	})
 	console.log(data);
 	setupQuestions();
@@ -275,8 +275,8 @@ function init(){
 	search.addEventListener("keyup", searchQuery);
 	upvote.addEventListener("click", upVote);
 	downvote.addEventListener("click", downVote);
-	favorite.addEventListener("click", addFavorite);
-	showFavBtn.addEventListener("click", showFavorite);
+	starred.addEventListener("click", addstarred);
+	showstarBtn.addEventListener("click", showstarred);
 }
 
 init();
