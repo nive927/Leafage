@@ -43,7 +43,7 @@
         <div class="collapse navbar-collapse" id="Navbar">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="#"
+              <a class="nav-link" href="index.html"
                 ><span class="fa fa-home fa-lg"></span> Home</a
               >
             </li>
@@ -52,7 +52,7 @@
                 ><span class="fa fa-info fa-lg"></span> About</a
               >
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="#"
                 ><span class="fa fa-list fa-lg"></span> Tools</a
               >
@@ -87,6 +87,18 @@
                 </div>
                 <div class="col-12 col-sm-4">
                   <input type="text" class="form-control" id="inputLastName" placeholder="Last Name"/>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="inputDOC">Date of Creation</label>
+                <div class="col-12 col-sm-8">
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="inputDOC"
+                    name="inputDOC"
+                    readonly/>
                 </div>
               </div>
 
@@ -434,7 +446,7 @@
           </div>
           <div class="card-body">
             <p class="card-text">
-              To add a new contact or lead, click this button
+              To add a new resource,<br>click this button
             </p>
             <div class="col-12 col-sm-10 text-center align-self-center">
               <a data-toggle="modal" data-target="#contactModal" role="button" type="button"
@@ -448,7 +460,7 @@
           </div>
           <div class="card-body">
             <p class="card-text">
-              To add a new equipment, click this button
+              To add a new resource,<br>click this button
             </p>
             <div class="col-12 col-sm-10 text-center align-self-center">
               <a data-toggle="modal" data-target="#equipmentModal" role="button" type="button"
@@ -462,7 +474,7 @@
           </div>
           <div class="card-body">
             <p class="card-text">
-              To add a new transaction, click this button
+              To add a new resource,<br>click this button
             </p>
             <div class="col-12 col-sm-10 text-center align-self-center">
               <a data-toggle="modal" data-target="#transactionModal" role="button" type="button"
@@ -517,6 +529,10 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      document.querySelector("#inputDOC").valueAsDate = new Date();
+    </script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
