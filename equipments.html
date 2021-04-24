@@ -24,7 +24,7 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
 
-    <title>View Contacts</title>
+    <title>View Equiments</title>
   </head>
 
   <body>
@@ -73,9 +73,9 @@
       <div class="container">
         <div class="row row-header">
           <div class="col-12 col-sm-8">
-            <h1>Contacts and Leads</h1>
+            <h1>Equipments</h1>
             <p>
-              Access all the contacts you have made so far and their associated details! 
+              Access all equipment records and related info! 
             </p>
           </div>
           <div class="col-12 col-sm" align-self-center>
@@ -98,41 +98,44 @@
       </div>
 
       <div class="row row-content">
-        <div class="col-xs-12>
-          <div class="card">
-            <h3 class="card-header bg-success text-white">Stats At a Glance</h3>
+          <div class="card col-xs-12 col-sm-12">
+            <h3 class="card-header bg-info text-white">Stats At a Glance</h3>
             <div class="card-body">
-              <div class="table-responsive">
-                <table class="table">
-                  <caption>Contact Resource Statistics</caption>
+              <div class="table-responsive table-hover">
+                <table class="table table-sm">
+                  <caption>Equipment Statistics</caption>
                   <tbody>
                     <tr>
-                      <th>Buyers</th>
+                      <th>Tractor</th>
                       <td>40</td>
                     </tr>
                     <tr>
-                        <th>Retailers</th>
+                        <th>Truck</th>
                         <td>40</td>
                     </tr>
                     <tr>
-                        <th>Wholesalers</th>
+                        <th>Wagon</th>
                         <td>40</td>
                     </tr>
                     <tr>
-                        <th>Supliers</th>
+                        <th>Irrigation</th>
                         <td>40</td>
                     </tr>
                     <tr>
-                        <th>Employees</th>
+                        <th>Tools</th>
                         <td>40</td>
                     </tr>
-                    <tr>
-                        <th>Random</th>
-                        <td>40</td>
-                    </tr>
+                    <tr class="alert-info">
+                      <th>Total Equipment</th>
+                      <td>200</td>
+                  </tr>
                     <tr class="alert-success">
-                        <th>Total Contacts</th>
-                        <td>40</td>
+                      <th>Owned</th>
+                      <td>100</td>
+                    </tr>
+                    <tr class="alert-danger">
+                        <th>Leased</th>
+                        <td>100</td>
                     </tr>
                   </tbody>
                 </table>
@@ -142,94 +145,54 @@
         </div>
         <div class="row row-content">
             <div class="col-12 col-sm-9">
-                <h2>Table of Contacts</h2>
+                <h2>Table of Equipments</h2>
                 <hr>
             </div>
             <div class="table-responsive">
                 <table class="table table-sm table-bordered table-striped table-hover">
-                <caption>List of contacts</caption>
+                <caption>List of equipments</caption>
                 <thead class="thead-dark">
                     <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>DOB</th>
-                    <th>Email</th>
-                    <th>Type</th>
-                    <th>Telephone</th>
-                    <th>Mobile</th>
-                    <th>Company</th>
-                    <th>Street Name</th>
-                    <th>City</th>
-                    <th>Pincode</th>
-                    <th>State</th>
-                    <th>Notes</th>
+                      <th>#</th>
+                      <th>Name</th>
+                      <th>Model</th>
+                      <th>Type</th>
+                      <th>Ownership</th>
+                      <th>Acquisition Date</th>
+                      <th>Cost</th>
+                      <th>Notes</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                    <th>1</th>
-                    <td>Abirami</td>
-                    <td>Mahesh</td>
-                    <td>16-07-2000</td>
-                    <td>abc@gmail.com</td>
-                    <td>Buyer</td>
-                    <td>04424510703</td>
-                    <td>9962055715</td>
-                    <td>Accolite</td>
-                    <td>Beach Road</td>
-                    <td>Chennai</td>
-                    <td>600041</td>
-                    <td>Tamil Nadu</td>
-                    <td>Really sweet</td>
+                      <th>1</th>
+                      <td>Tata tractor</td>
+                      <td>XM41123</td>
+                      <td>Tractor</td>
+                      <td>Purchased</td>
+                      <td>23-07-2016</td>
+                      <td>150000</td>
+                      <td>Bad condition</td>
                     </tr>
                     <tr>
-                    <th>2</th>
-                    <td>Abirami</td>
-                    <td>Mahesh</td>
-                    <td>16-07-2000</td>
-                    <td>abc@gmail.com</td>
-                    <td>Buyer</td>
-                    <td>04424510703</td>
-                    <td>9962055715</td>
-                    <td>Accolite</td>
-                    <td>Beach Road</td>
-                    <td>Chennai</td>
-                    <td>600041</td>
-                    <td>Tamil Nadu</td>
-                    <td>Really sweet</td>
+                      <th>2</th>
+                      <td>Tata tractor</td>
+                      <td>XM41123</td>
+                      <td>Tractor</td>
+                      <td>Purchased</td>
+                      <td>23-07-2016</td>
+                      <td>1,50,000</td>
+                      <td>Bad condition</td>
                     </tr>
                     <tr>
-                    <th>3</th>
-                    <td>Abirami</td>
-                    <td>Mahesh</td>
-                    <td>16-07-2000</td>
-                    <td>abc@gmail.com</td>
-                    <td>Buyer</td>
-                    <td>04424510703</td>
-                    <td>9962055715</td>
-                    <td>Accolite</td>
-                    <td>Beach Road</td>
-                    <td>Chennai</td>
-                    <td>600041</td>
-                    <td>Tamil Nadu</td>
-                    <td>Really sweet</td>
-                    </tr>
-                    <tr>
-                    <th>4</th>
-                    <td>Abirami</td>
-                    <td>Mahesh</td>
-                    <td>16-07-2000</td>
-                    <td>abc@gmail.com</td>
-                    <td>Buyer</td>
-                    <td>04424510703</td>
-                    <td>9962055715</td>
-                    <td>Accolite</td>
-                    <td>Beach Road</td>
-                    <td>Chennai</td>
-                    <td>600041</td>
-                    <td>Tamil Nadu</td>
-                    <td>Really sweet</td>
+                      <th>3</th>
+                      <td>Tata tractor</td>
+                      <td>XM41123</td>
+                      <td>Tractor</td>
+                      <td>Purchased</td>
+                      <td>23-07-2016</td>
+                      <td>1,50,000</td>
+                      <td>Bad condition</td>
                     </tr>
                 </tbody>
                 </table>
